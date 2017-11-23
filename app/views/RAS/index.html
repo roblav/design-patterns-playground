@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">
+        Request Object Query - req.query
+      </h1>
+
+      <p>
+        In route.js console.log(req). This will display the request object in the command line.
+        <a href="http://expressjs.com/en/api.html#req">Find out more about the Request obect</a>
+      </p>
+
+      {% if title !== "" %}
+         <h2 class="heading-large">req.query: {{title}}</h2>
+      {% endif %}
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+
