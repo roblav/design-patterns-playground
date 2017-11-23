@@ -15,6 +15,18 @@ router.get('/RAS', function (req, res) {
   res.render('RAS/index', {title})
 })
 
+router.post('/RAS/errors', function (req, res) {
+  //req.session.getHelp = req.body.getHelp
+  console.log("Form submission: "+ req.body.getHelp)
+  req.check('getHelp', 'Confirm what type of help or information you need').notEmpty();
+  const errors = req.validationErrors();
+  if (errors) {
+    res.render('RAS/errors', { errors })
+  } else {
+    //Do nothing
+  }
+})
+
 // Add your routes here - above the module.exports line
 
 module.exports = router

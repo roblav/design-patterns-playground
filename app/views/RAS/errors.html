@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large no-margin-top">Get help</h1>
+      <section class="margin-bottom-large">
+        {% for error in errors %}
+        <div class="error-summary">
+          <h2 class="heading-medium error-summary-heading">There is a problem</h2>
+          <ul class="error-summary-list">
+            <li><a href="#confirm-help">{{ error.msg }}</a></li>
+          </ul>
+        </div>
+        {% endfor %}
+        <form action="/RAS/errors" method="post">
+          <div class="form-group">
+            {% if errors %}
+              <div class="form-group form-group-error">
+            {% endif %} 
+              <fieldset>
+                <legend class="visuallyhidden">Select from the following help options</legend>
+                <div class="multiple-choice">
+                  <input id="cannot-pay" type="radio" name="getHelp" value="cannot-pay">
+                  <label for="cannot-pay">Tell us if you cannot pay the tax you owe</label>
+                </div>
+                <div class="multiple-choice">
+                  <input id="amount-wrong" type="radio" name="getHelp" value="amount-wrong">
+                  <label for="amount-wrong">Tell us if you think that the amount you owe is wrong</label>
+                </div>
+                <div class="multiple-choice">
+                  <input id="not-showing" type="radio" name="getHelp" value="not-showing">
+                  <label for="not-showing">A payment you made is not showing</label>
+                </div>
+              </fieldset>
+            {% if errors %}
+              </div>
+            {% endif %}
+          </div>
+          <div class="form-group">
+            <button type="submit" class="button" role="button">Continue</button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+
