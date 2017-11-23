@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">
+        Check Your Answers
+      </h1>
+      <p>
+        This kit lets you rapidly create HTML prototypes of GOV.UK services.
+      </p>
+
+      <h2 class="heading-medium">Table Layout Example</h2>
+      <table>
+                <thead>
+                
+                <tr>
+                    <th scope="col">Employer</th>
+                    <th scope="col">Start date</th>
+                    <th scope="col">End date</th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td scope="row">Top Shop</td>
+                    <td scope="row">10 August 2016</td>
+                    <td scope="row">Current</td>
+                    <td scope="row"><a href="single-income-record.html" class="float-right">View record<span class="visuallyhidden">View [client]'s income record for [employer/pension provider]</span></a></td>
+                </tr>
+                <tr>
+                    <td scope="row">Virgin PLC</td>
+                    <td scope="row">10 June 2016</td>
+                    <td scope="row">20 July 2016</td>
+                    <td scope="row"><a href="single-income-record" class="float-right">View record<span class="visuallyhidden">View [client]'s income record for [employer/pension provider]</span></a></td>
+                </tr>
+                <tr>
+                    <td scope="row">McDonald's</td>
+                    <td scope="row">10 March 2013</td>
+                    <td scope="row">No data available</td>
+                    <td scope="row"><a href="single-income-record" class="float-right">View record<span class="visuallyhidden">View [client]'s income record for [employer/pension provider]</span></a></td>
+                </tr>
+                </tbody>
+            </table>
+
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+
